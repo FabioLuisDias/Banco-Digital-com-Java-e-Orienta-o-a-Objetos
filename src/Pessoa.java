@@ -1,4 +1,4 @@
-public class Cliente {
+public class Pessoa {
 
     private String nome;
 

@@ -6,12 +6,12 @@ public abstract class Conta implements IConta{
     protected int agencia;
     protected int numero;
     protected double saldo;
-    protected Cliente cliente;
+    protected Pessoa pessoa;
 
-    public Conta(Cliente cliente) {
+    public Conta(Pessoa pessoa) {
         this.agencia = AGENCIA_PADRAO;
         this.numero = SEQUENCIAL ++;
-        this.cliente = cliente;
+        this.pessoa = pessoa;
     }
 
     @Override
@@ -43,9 +43,10 @@ public abstract class Conta implements IConta{
     }
 
     protected void imprimirInfosComuns() {
-        System.out.println(String.format("Titular: %s", this.cliente.getNome())); //formatando como String
+        System.out.println(String.format("Titular: %s", this.pessoa.getNome())); //formatando como String
         System.out.println(String.format("Agencia: %d", this.agencia));//formatando como decimal
         System.out.println(String.format("Numero: %d", this.numero));
         System.out.println(String.format("Saldo: %.2f", this.saldo));//formatando com 2 casas decimais
     }
+
 }
